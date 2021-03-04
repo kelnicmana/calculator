@@ -72,8 +72,12 @@ body {
     background-color: rgba(210,210,210,1);
 }
 
-.add, .sub, .mul, .div, .eql {
+.add, .sub, .mul, .div {
     background-color: rgba(255,168,1,1);
+}
+
+.add:hover, .sub:hover, .mul:hover, .div:hover {
+    background-color: rgba(225,148,0,1);
 }
 
 .eql {
@@ -90,10 +94,6 @@ body {
 
 .ac:hover, .c:hover, .pow:hover {
 background-color: rgba(170, 98, 203,1);
-}
-
-.add:hover, .sub:hover, .mul:hover, .div:hover {
-    background-color: rgba(225,148,0,1);
 }
 
 .display {
