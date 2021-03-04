@@ -1,0 +1,110 @@
+@font-face { font-family: digital7; src: url('digital-7.ttf'); }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+    background: linear-gradient(to bottom, rgba(100,100,100,1), rgba(200,200,200,1), rgba(200,200,200,1), rgba(100,100,100,1)),
+    url('acbackground.png');
+    background-blend-mode: multiply;
+	line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+    }
+
+.container {
+    margin: 1rem;
+    padding: 1.5rem;
+    background-color: rgba(150,150,150,1);
+    background-image: linear-gradient(to right bottom, rgba(150,150,150,1), rgba(140,140,140,1), rgba(120,120,120,1));
+    width: 26rem;
+    height: 32rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 7rem repeat(5, 1fr);
+    border: 1px solid rgba(50,50,50,1);
+    border-radius: 10px;
+    gap: 0.75rem;
+    font-family: 'Inconsolata', monospace;
+    font-size: 2.75rem;
+    box-shadow: 0.1rem 0.1rem 0.2rem rgba(50,50,50,1);
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(50,50,50,1);
+    border-radius: 5px;
+    background-color: rgba(220,220,220,1);
+    box-shadow: 0.1rem 0.1rem 0.2rem rgba(50,50,50,1);
+}
+
+.button:hover {
+    background-color: rgba(245,245,245,1);
+}
+
+.add, .sub, .mul, .div, .eql {
+    background-color: rgba(245,155,0,1);
+}
+
+.add:hover, .sub:hover, .mul:hover, .div:hover, .eql:hover {
+    background-color: rgba(255,170,10,1);
+}
+
+.display {
+    text-align: right;
+    padding: 0.5rem 0.75rem;
+    grid-column: 1 / 5;
+    border: 1px solid rgba(50,50,50,1);
+    border-radius: 2px;
+    background-color: rgba(240,245,240,1);
+    justify-content: flex-end;
+    align-items: flex-end;
+    font-family: digital7;
+    font-size: 4rem;
+    box-shadow: 0.1rem 0.1rem 0.2rem rgba(50,50,50,1) inset;
+    line-height: 0.85;
+    word-wrap: break-word;
+}
+
+@media only screen and (max-width: 415px) {
+    .container {
+        padding: 1rem;
+        height: 110vw;
+        gap: 0.5rem;
+        font-size: 2rem;
+        grid-template-rows: 5.5rem repeat(5, 1fr);
+    }
+
+    .display {
+        font-size: 3rem;
+    }
+}
