@@ -1,45 +1,34 @@
 let current = 0;
 let stored = 0;
 let operator = 'none';
-const add = (a, b) => a+b;
-const subtract = (a, b) => a-b;
-const multiply = (a, b) => a*b;
-const divide = (a, b) => a/b;
-const power = (a, b) => Math.pow(a, b);
+document.querySelector('.display').innerHTML = current;
 
 function operate(o) {
-    if (o == 'add') {
-        stored = parseFloat(stored) + parseInt(current);
-        document.querySelector('.display').innerHTML = stored;
-        current = 0;
-    }
-    else if (o == 'sub') {
-        stored = parseFloat(stored) - parseInt(current);
-        document.querySelector('.display').innerHTML = stored;
-        current = 0;
-    }
-    else if (o == 'mul') {
-        stored = parseFloat(stored) * parseInt(current);
-        document.querySelector('.display').innerHTML = stored;
-        current = 0;
-    }
+    stored = parseFloat(stored);
+    current = parseFloat(current);
+    if (o == 'add') { stored += + current; }
+    else if (o == 'sub') { stored -= current; }
+    else if (o == 'mul') { stored *= current; }
     else if (o == 'div') {
-        if (current == 0 || current == '0') {
+        if (current == 0) {
             alert('You can\'t divide by zero!');
             stored = 0;
-            current = 0;
-        }
-        else {
-        stored = parseFloat(stored) / parseInt(current);
-        document.querySelector('.display').innerHTML = stored;
-        current = 0;
+            }
+            else {
+            stored /= current;
         }
     }
-    else if (o == 'pow') {
-        stored = Math.pow(parseFloat(stored), parseInt(current));
-        document.querySelector('.display').innerHTML = stored;
-        current = 0;
+    else if (o == 'pow') { stored = Math.pow(stored, current); }
+    if (stored % 1 !== 0) {
+        stored = stored.toFixed(2)
+        stored = parseFloat(stored);
+        if (stored * 100 % 10 === 0) {
+            stored = stored.toFixed(1);
+            stored = parseFloat(stored);
+        }
     }
+    document.querySelector('.display').innerHTML = stored;
+    current = 0;
 }
 
 document.querySelector('.add').onclick = function() {
@@ -87,9 +76,6 @@ document.querySelector('.eql').onclick = function() {
     operator = 'none';
     current = stored;
 }
-
-
-document.querySelector('.display').innerHTML = current;
 
 document.querySelector('.one').onclick = function() {
     current === 0 ? current = 1 : current += '1';
