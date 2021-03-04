@@ -24,9 +24,16 @@ function operate(o) {
         current = 0;
     }
     else if (o == 'div') {
+        if (current == 0 || current == '0') {
+            alert('You can\'t divide by zero!');
+            stored = 0;
+            current = 0;
+        }
+        else {
         stored = parseFloat(stored) / parseInt(current);
         document.querySelector('.display').innerHTML = stored;
         current = 0;
+        }
     }
     else if (o == 'pow') {
         stored = Math.pow(parseFloat(stored), parseInt(current));
@@ -126,14 +133,8 @@ document.querySelector('.zero').onclick = function() {
     document.querySelector('.display').innerHTML = current;}
 
 document.querySelector('.posneg').onclick = function() {
-    if (current == 'inactive') {
-        stored != 0 ? stored = -stored : 0;
-    document.querySelector('.display').innerHTML = stored;
-    }
-    else {
     current != 0 ? current = -current : 0;
     document.querySelector('.display').innerHTML = current;
-    }
 }
 
 document.querySelector('.ac').onclick = function() {
