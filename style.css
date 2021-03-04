@@ -27,8 +27,9 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
     background: linear-gradient(to bottom, rgba(100,100,100,1), rgba(200,200,200,1), rgba(200,200,200,1), rgba(100,100,100,1)),
-    url('acbackground.png');
+    url(acbackground.png);
     background-blend-mode: multiply;
+    color: rgba(90, 42, 42, 1);
 	line-height: 1;
     display: flex;
     justify-content: center;
@@ -42,19 +43,18 @@ body {
 .container {
     margin: 1rem;
     padding: 1.5rem;
-    background-color: rgba(150,150,150,1);
-    background-image: linear-gradient(to right bottom, rgba(150,150,150,1), rgba(140,140,140,1), rgba(120,120,120,1));
+    background-color: rgba(24,95,192,1);
     width: 26rem;
     height: 32rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 7rem repeat(5, 1fr);
-    border: 1px solid rgba(50,50,50,1);
+    grid-template-rows: 8rem repeat(5, 1fr);
+    border: 2px solid rgba(1,78,136,1);
     border-radius: 10px;
     gap: 0.75rem;
     font-family: 'Inconsolata', monospace;
     font-size: 2.75rem;
-    box-shadow: 0.1rem 0.1rem 0.2rem rgba(50,50,50,1);
+    box-shadow: 0.2rem 0.2rem 0.4rem 0.2rem rgba(50,50,50,1);
 }
 
 .button {
@@ -63,20 +63,37 @@ body {
     align-items: center;
     border: 1px solid rgba(50,50,50,1);
     border-radius: 5px;
-    background-color: rgba(220,220,220,1);
-    box-shadow: 0.1rem 0.1rem 0.2rem rgba(50,50,50,1);
+    background-color: rgba(235,235,235,1);
+    box-shadow: 0.2rem 0.2rem 0.4rem rgba(1,68,116,1);
+    text-shadow: 0px 1px white;
 }
 
 .button:hover {
-    background-color: rgba(245,245,245,1);
+    background-color: rgba(210,210,210,1);
 }
 
 .add, .sub, .mul, .div, .eql {
-    background-color: rgba(245,155,0,1);
+    background-color: rgba(255,168,1,1);
 }
 
-.add:hover, .sub:hover, .mul:hover, .div:hover, .eql:hover {
-    background-color: rgba(255,170,10,1);
+.eql {
+    background-color: rgba(101, 241, 164, 1);
+}
+
+.eql:hover {
+    background-color: rgba(46, 214, 139, 1);
+}
+
+.ac, .c, .pow {
+    background-color: rgba(207, 108, 233,1);
+}
+
+.ac:hover, .c:hover, .pow:hover {
+background-color: rgba(170, 98, 203,1);
+}
+
+.add:hover, .sub:hover, .mul:hover, .div:hover {
+    background-color: rgba(225,148,0,1);
 }
 
 .display {
@@ -85,7 +102,7 @@ body {
     grid-column: 1 / 5;
     border: 1px solid rgba(50,50,50,1);
     border-radius: 2px;
-    background-color: rgba(240,245,240,1);
+    background-color: rgba(255,255,255,1);
     justify-content: flex-end;
     align-items: flex-end;
     font-family: digital7;
@@ -101,7 +118,7 @@ body {
         height: 110vw;
         gap: 0.5rem;
         font-size: 2rem;
-        grid-template-rows: 5.5rem repeat(5, 1fr);
+        grid-template-rows: 7rem repeat(5, 1fr);
     }
 
     .display {
