@@ -153,5 +153,11 @@ document.querySelector('.c').onclick = function() {
     document.querySelector('.display').innerHTML = current;}
 
 document.querySelector('.dec').onclick = function() {
+    if (typeof current !== 'string') {
+        current = current.toString();
+    }
+    if (!current.includes('.')) {
     current += '.';
-    document.querySelector('.display').innerHTML = current;}
+    document.querySelector('.display').innerHTML = current;
+    }
+}
