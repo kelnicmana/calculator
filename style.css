@@ -70,14 +70,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid rgba(1,45,80,1);
+    border: 2px solid rgba(1,45,80,1);
     border-radius: 0.75rem;
     background-color: rgba(235,235,235,1);
     box-shadow: 0.15rem 0.15rem 0.2rem rgba(1,68,116,1);
 }
 
 .button:hover {
-    background-color: rgba(210,210,210,1);
+    background-color: rgba(200,200,200,1);
 }
 
 .add, .sub, .mul, .div {
@@ -87,17 +87,17 @@ body {
 }
 
 .add:hover, .sub:hover, .mul:hover, .div:hover {
-    background-color: rgba(225,148,0,1);
+    background-color: rgba(215,140,0,1);
 }
 
 .eql {
     color: rgba(255, 255, 255, 1);
     text-shadow: 1px 2px rgba(90, 42, 42, 1);
-    background-color: rgba(101, 241, 164, 1);
+    background-color: rgba(46, 214, 139, 1);
 }
 
 .eql:hover {
-    background-color: rgba(46, 214, 139, 1);
+    background-color: rgba(36, 180, 115, 1);
 }
 
 .ac, .c, .pow {
