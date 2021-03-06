@@ -1,6 +1,7 @@
 let current = 0;
 let stored = 0;
 let operator = 'none';
+///purpose of clicks is to allow user to switch the currently selected operator without running the function operate before intended
 let clicks = ['else', 'else'];
 document.querySelector('.display').innerHTML = current;
 
@@ -46,7 +47,6 @@ document.querySelector('.add').onclick = function() {
     }
     clicks.shift();
     clicks.push('ope');
-    console.log(clicks);
 }
 
 document.querySelector('.sub').onclick = function() {
@@ -63,7 +63,6 @@ document.querySelector('.sub').onclick = function() {
     }
     clicks.shift();
     clicks.push('ope');
-    console.log(clicks);
 }
 
 document.querySelector('.mul').onclick = function() {
@@ -82,7 +81,6 @@ document.querySelector('.mul').onclick = function() {
     }
     clicks.shift();
     clicks.push('ope');
-    console.log(clicks);
 }
 document.querySelector('.div').onclick = function() {
     if (clicks[1] === 'ope') {
@@ -98,7 +96,6 @@ document.querySelector('.div').onclick = function() {
     }
     clicks.shift();
     clicks.push('ope');
-    console.log(clicks);
 }
 
 document.querySelector('.pow').onclick = function() {
@@ -115,7 +112,6 @@ document.querySelector('.pow').onclick = function() {
     }
     clicks.shift();
     clicks.push('ope');
-    console.log(clicks);
 }
 
 document.querySelector('.eql').onclick = function() {
@@ -126,65 +122,21 @@ document.querySelector('.eql').onclick = function() {
     clicks.push('else');
 }
 
-document.querySelector('.one').onclick = function() {
-    clicks.shift();
-    clicks.push('else');
-    current === 0 ? current = 1 : current += '1';
-    document.querySelector('.display').innerHTML = current;}
+document.querySelector('.one').onclick = () => numbers(1);
+document.querySelector('.two').onclick = () => numbers(2);
+document.querySelector('.three').onclick = () => numbers(3);
+document.querySelector('.four').onclick = () => numbers(4);
+document.querySelector('.five').onclick = () => numbers(5);
+document.querySelector('.six').onclick = () => numbers(6);
+document.querySelector('.seven').onclick = () => numbers(7);
+document.querySelector('.eight').onclick = () => numbers(8);
+document.querySelector('.nine').onclick = () => numbers(9);
+document.querySelector('.zero').onclick = () => numbers(0);
 
-document.querySelector('.two').onclick = function() {
+function numbers(num) {
     clicks.shift();
     clicks.push('else');
-    current === 0 ? current = 2 : current += '2';
-    document.querySelector('.display').innerHTML = current;}
-
-document.querySelector('.three').onclick = function() {
-    clicks.shift();
-    clicks.push('else');
-    current === 0 ? current = 3 : current += '3';
-    document.querySelector('.display').innerHTML = current;}
-
-document.querySelector('.four').onclick = function() {
-    clicks.shift();
-    clicks.push('else');
-    current === 0 ? current = 4 : current += '4';
-    document.querySelector('.display').innerHTML = current;}
-
-document.querySelector('.five').onclick = function() {
-    clicks.shift();
-    clicks.push('else');
-    current === 0 ? current = 5 : current += '5';
-    document.querySelector('.display').innerHTML = current;}
-    
-document.querySelector('.six').onclick = function() {
-    clicks.shift();
-    clicks.push('else');
-    current === 0 ? current = 6 : current += '6';
-    document.querySelector('.display').innerHTML = current;}
-
-document.querySelector('.seven').onclick = function() {
-    clicks.shift();
-    clicks.push('else');
-    current === 0 ? current = 7 : current += '7';
-    document.querySelector('.display').innerHTML = current;}
-
-document.querySelector('.eight').onclick = function() {
-    clicks.shift();
-    clicks.push('else');
-    current === 0 ? current = 8 : current += '8';
-    current = parseFloat(current);
-    document.querySelector('.display').innerHTML = current;}
-
-document.querySelector('.nine').onclick = function() {
-    clicks.shift();
-    clicks.push('else');
-    current === 0 ? current = 9 : current += '9';
-    document.querySelector('.display').innerHTML = current;}
-
-document.querySelector('.zero').onclick = function() {
-    clicks.shift();
-    clicks.push('else');
-    current === 0 ? current = 0 : current += '0';
+    current === 0 ? current = num : current += `${num}`;
     document.querySelector('.display').innerHTML = current;}
 
 document.querySelector('.posneg').onclick = function() {
@@ -203,7 +155,11 @@ document.querySelector('.c').onclick = function() {
     if (typeof current !== 'string') {
         current = current.toString();
     }
+    const strLen = current.length;
     current === 0 ? current = 0 : current = current.slice(0, -1);
+    if (current.charAt(strLen - 2) === '.') {
+        current = current.slice(0, -1);
+    }
     if (current.length <= 0) {
         current = 0;
     }
