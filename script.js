@@ -115,7 +115,7 @@ document.querySelector('.pow').onclick = function() {
 }
 
 document.querySelector('.eql').onclick = function() {
-    if (clicks[1] != 'ope') {
+    if (clicks[1] !== 'ope' && operator !== 'none') {
     operate(operator);
     operator = 'none';
     current = stored;
