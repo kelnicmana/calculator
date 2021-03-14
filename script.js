@@ -115,12 +115,16 @@ document.querySelector('.pow').onclick = function() {
 }
 
 document.querySelector('.eql').onclick = function() {
+    if (clicks[1] != 'ope') {
     operate(operator);
     operator = 'none';
     current = stored;
     clicks.shift();
     clicks.push('else');
+    }
 }
+
+
 
 document.querySelector('.one').onclick = () => numbers(1);
 document.querySelector('.two').onclick = () => numbers(2);
@@ -157,7 +161,7 @@ document.querySelector('.c').onclick = function() {
     }
     const strLen = current.length;
     current === 0 ? current = 0 : current = current.slice(0, -1);
-    if (current.charAt(strLen - 2) === '.') {
+    if (current.charAt(strLen - 2) === '.' || current.charAt(strLen - 2) === '-') {
         current = current.slice(0, -1);
     }
     if (current.length <= 0) {
